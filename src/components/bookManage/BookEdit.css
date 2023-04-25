@@ -1,0 +1,10 @@
+.book-edit {
+  width: 100%;
+}
+input {
+  width: 100%;
+}
+.book-edit > button {
+  font-weight: bold;
+ 
+}
