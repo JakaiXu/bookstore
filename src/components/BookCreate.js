@@ -1,14 +1,17 @@
 import React, { useState } from "react";
+import useBooksContext from "../hooks/useBooksContext";
 import "./BookCreate.css";
-const BookCreate = ({ onCreate}) => {
+const BookCreate = () => {
+  const { createBook } = useBooksContext();
+
   const [term, setTerm] = useState("");
   const termHandler = (e) => {
     setTerm(e.target.value);
   };
   const submitHandler = (e) => {
     e.preventDefault();
-    onCreate(term);
-    setTerm('')
+    createBook(term);
+    setTerm("");
   };
 
   return (

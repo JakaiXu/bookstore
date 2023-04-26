@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import useBooksContext from "../../hooks/useBooksContext";
 import "./BookEdit.css";
 const BookEdit = ({ book, onSubmit }) => {
+  const { editBookById } = useBooksContext();
   const [editing, setEditing] = useState(book.title);
 
   const titleEdit = (e) => {
@@ -8,13 +10,14 @@ const BookEdit = ({ book, onSubmit }) => {
   };
   const submitHandler = (e) => {
     e.preventDefault();
-    
-  
-    onSubmit(book.id, editing);
+
+    onSubmit();
+    editBookById(book.id, editing);
   };
   return (
     <form onSubmit={submitHandler} className="book-edit">
       <label>Title</label>
+
       <input value={editing} onChange={titleEdit} />
       <button className="button  is-small  is-fullwidth is-outlined">
         Save

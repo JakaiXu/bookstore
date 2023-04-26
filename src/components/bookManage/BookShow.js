@@ -1,18 +1,22 @@
 import React, { useState } from "react";
-import "./BookShow.css";
 import icon from "../../assets/book-icon.png";
 import BookEdit from "./BookEdit";
-const BookShow = ({ book, onDelete, onEditBookById }) => {
+
+import useBooksContext from "../../hooks/useBooksContext";
+import "./BookShow.css";
+const BookShow = ({book   }) => {
+const {deleteBook, editBookById} =useBooksContext()
+
   const [showEdit, setShowEdit] = useState(false);
   const handleDeleteClick = () => {
-    onDelete(book.id);
+    deleteBook(book.id);
   };
   const showEditClick = () => {
     setShowEdit(!showEdit);
   };
   const handleSubmit = (id,newTitle) => {
     setShowEdit(false);
-    onEditBookById(id,newTitle);
+    editBookById(id,newTitle);
   };
   return (
     <div className="book-show">

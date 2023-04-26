@@ -1,18 +1,6 @@
 {
   "books": [
     {
-      "title": "Harry Potter",
-      "id": 2
-    },
-    {
-      "title": "",
-      "id": 3
-    },
-    {
-      "title": "new book",
-      "id": 4
-    },
-    {
       "title": "Hunger Games",
       "id": 5
     },
@@ -21,7 +9,7 @@
       "id": 6
     },
     {
-      "title": "",
+      "title": "Harry Potter",
       "id": 7
     }
   ]
